@@ -105,8 +105,8 @@ export const Footer = () => {
                     </div>
                     <div className="py-10 flex gap-6 flex-col md:flex-row justify-between items-center">
                         <div className="w-full">
-                            <p>Se você leu isso aqui, saiba que está no caminho certo!</p>
-                            <p>Continue estudando e você chegará lá...</p>
+                            <p>Loja fictícia de vestuário e acessórios de tecnologia</p>
+                            <p>Em desenvolvimento de interface, e funcionalidades do Front-End no momento com: NextJS, Typescript, TailwindCss, Zustand, e mais...</p>
                         </div>
                         <div className="w-full flex justify-end">
                             <FooterButton 
