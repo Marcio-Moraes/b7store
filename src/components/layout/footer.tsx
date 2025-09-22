@@ -39,7 +39,7 @@ export const Footer = () => {
             </div>
             <div className="bg-black text-white py-2.5">
                 <div className="w-full max-w-6xl m-auto p-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center py-10 border-b border-gray-700">
+                    <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center py-10 border-b border-gray-700">
                         <div className="">
                             <Image
                                 src={`/assets/ui/logo-white.png`}
@@ -47,7 +47,7 @@ export const Footer = () => {
                                 height={48}
                                 alt={"B7Store"} />
                         </div>
-                        <div className="">
+                        <div className="list-none flex gap-6">
                             {menu.map((item, index)=>(
                                 <li key={index}>
                                     <Link key={index} href={item.href} className="hover:text-blue-600">
