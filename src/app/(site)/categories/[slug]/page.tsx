@@ -14,8 +14,8 @@ export default async function Page({ params, searchParams }: Props ) {
 
     return(
         <div className="">
-            <div className="text-gray-500 mb-4">
-                <Link href={'/'}>Home</Link> &gt; Temporário
+            <div className="text-gray-500 mb-4 py-2.5">
+                <Link href={'/'}>Home</Link> &gt; <span className="capitalize">{slug}</span>
             </div>
 
             <ProdutoListaFiltro />

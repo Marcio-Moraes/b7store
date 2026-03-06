@@ -69,7 +69,7 @@ export function Header() {
             {menuAbrir &&
                 <div className="md:hidden pb-6">
                     {menu.map((item, index)=>(
-                        <Link key={index} href={item.href}>
+                        <Link key={index} href={item.href} onClick={()=> setMenuAbrir(false)}>
                             <div className="p-6 border-b border-gray-200 flex justify-between items-center">
                                 <div className="font-medium text-lg text-gray-500">
                                     {item.label}

@@ -42,7 +42,6 @@ export const ProdutoListaFiltro = () => {
             <div className="mt-8 flex flex-col md:flex-row gap-8">
                 <div className={`flex-1 md:max-w-70 ${filtroAberto ? 'block' : 'hidden'} md:block`}>
                     <FiltroGrupo id="tech" name="Tecnologias" />
-                    <FiltroGrupo id="color" name="Cores" />
                 </div>
 
                 <div className="flex-1 grid grid-cols-1 md:grid-cols-3">
