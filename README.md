@@ -1,6 +1,6 @@
 #Loja B7strore 
 
-[Link](https://b7store.vercel.app/)
+[Veja Online](https://b7store.vercel.app/)
 
 ## Tecnologias utlizadas
 - Nextjs
