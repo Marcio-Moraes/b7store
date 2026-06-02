@@ -11,7 +11,7 @@ type Props = {
 
 export const ProdutoItem = ({data}: Props) => {
     const [curtido, setCurtido] = useState(data.liked);
-    const link = `/product/${data.id}`;
+    const link = `/categories/${data.category}/${data.slug}`;
 
     const toggleCurtido = () => {
         setCurtido(!curtido);

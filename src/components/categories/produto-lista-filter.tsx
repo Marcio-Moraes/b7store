@@ -1,10 +1,16 @@
 "use client"
 
 import { useQueryString } from "@/hooks/use-querystring";
+import { Produto } from "@/type/produto";
 import { ChangeEvent, useState } from "react";
 import { FiltroGrupo } from "./filtro-grupo";
+import { ProdutoLista } from "../produtoLista";
 
-export const ProdutoListaFiltro = () => {
+type Props = {
+    products: Produto[];
+}
+
+export const ProdutoListaFiltro = ({ products }: Props) => {
     const queryString = useQueryString();
     const [filtroAberto, setFiltroAberto] = useState(false);
 
@@ -17,7 +23,7 @@ export const ProdutoListaFiltro = () => {
     return(
         <div>
             <div className="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
-                <div className="text-3xl"><strong>99</strong> Produtos</div>
+                <div className="text-3xl"><strong>{products.length}</strong> Produtos</div>
                 <div className="w-full md:max-w-70 flex gap-5">
                     <select 
                         defaultValue={order} 
@@ -44,11 +50,14 @@ export const ProdutoListaFiltro = () => {
                     <FiltroGrupo id="tech" name="Tecnologias" />
                 </div>
 
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-3">
-                    <div className="">...</div>
-                    <div className="">...</div>
-                    <div className="">...</div>
-                    <div className="">...</div>
+                <div className="flex-1">
+                    {products.length > 0 ? (
+                        <ProdutoLista list={products} />
+                    ) : (
+                        <div className="bg-white border border-gray-200 rounded-sm p-8 text-gray-500">
+                            Nenhum produto encontrado para esta categoria.
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
