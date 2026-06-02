@@ -1,5 +1,7 @@
 import { ProdutoListaFiltro } from "@/components/categories/produto-lista-filter";
+import { data } from "@/data";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 type Props = {
     params: Promise<{slug: string}>,
@@ -8,7 +10,13 @@ type Props = {
 
 export default async function Page({ params, searchParams }: Props ) {
     const { slug } = await params;
-    const filters = await searchParams;
+    await searchParams;
+
+    const productsByCategory = data.products.filter((item) => item.category === slug);
+
+    if (productsByCategory.length === 0) {
+        notFound();
+    }
 
     // TODO: Pegar as informações da categoria
 
@@ -18,7 +26,7 @@ export default async function Page({ params, searchParams }: Props ) {
                 <Link href={'/'}>Home</Link> &gt; <span className="capitalize">{slug}</span>
             </div>
 
-            <ProdutoListaFiltro />
+            <ProdutoListaFiltro products={productsByCategory} />
         </div>
     );
 }
